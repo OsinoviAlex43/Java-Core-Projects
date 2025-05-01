@@ -1,4 +1,8 @@
 package osinovii.develop;
 
-public interface SolveTask {
+public class SolveTask {
+
+    public void solveTask(){
+
+    }
 }

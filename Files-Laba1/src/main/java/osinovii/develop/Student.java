@@ -63,13 +63,13 @@ public class Student {
         return averageScore;
     }
 
-    public void averageScore() {
+    public void setAverageScore() {
         this.averageScore = (physicsGrade + mathGrade + informaticsGrade) / 3.0;
     }
 
     @Override
     public String toString() {
-        return String.join( ",",lastname,String.valueOf(groupNumber),String.valueOf(physicsGrade),String.valueOf(mathGrade),String.valueOf(informaticsGrade));
+        return String.join( ",",lastname,String.valueOf(groupNumber),String.valueOf(physicsGrade),String.valueOf(mathGrade),String.valueOf(informaticsGrade),String.valueOf(averageScore));
     }
 }
 

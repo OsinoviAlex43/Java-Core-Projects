@@ -1,4 +1,8 @@
 package osinovii.develop;
 
-public interface ViewFile {
+public class ViewFile {
+
+    public void viewFile(){
+
+    }
 }
