@@ -12,6 +12,7 @@ public class AddStudentValue {
         student.setPhysicsGrade(scanner.nextDouble());
         student.setMathGrade(scanner.nextDouble());
         student.setInformaticsGrade(scanner.nextDouble());
+        scanner.nextLine();
         System.out.println("Information successfully received");
         student.setAverageScore();
     }

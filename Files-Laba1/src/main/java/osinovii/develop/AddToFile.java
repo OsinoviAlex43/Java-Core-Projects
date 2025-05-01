@@ -1,14 +1,15 @@
 package osinovii.develop;
 
+import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
 public class AddToFile {
     public void addToFile(Student student) {
-        try (FileWriter fileWriter = new FileWriter("File")) {
-            fileWriter.write(student.toString());
-            fileWriter.write("\n");
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("File",true))) {
+            bufferedWriter.write(student.toString());
+            bufferedWriter.newLine();
         } catch (IOException e) {
             System.out.println("Error" + e.getMessage());
         }
