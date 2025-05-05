@@ -15,7 +15,7 @@ public class SolveTask {
         double average_score_st = scanner.nextDouble();
         scanner.nextLine();
         int count = 0;
-        try (BufferedReader bufferedReader = new BufferedReader(new FileReader("FIle"))) {
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader("File"))) {
             String line;
             while ((line = bufferedReader.readLine()) != null) {
                 String[] param = line.split(",");

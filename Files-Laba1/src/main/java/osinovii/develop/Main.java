@@ -6,21 +6,20 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws IOException {
 
-        Scanner SystemScanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         AddToFile addToFile = new AddToFile();
         CreateFile createFile = new CreateFile();
         SolveTask solveTask = new SolveTask();
         ViewFile viewFile = new ViewFile();
         AddStudentValue addStudentValue = new AddStudentValue();
 
-        int num_of_option = 0;
-
+        int option = 0;
 
         System.out.println("Menu:\n1.Create File\n2.Add to File\n3.View File\n4.Solve Task\n5.Exit");
 
         do {
-            num_of_option = SystemScanner.nextInt();
-            switch (num_of_option) {
+            option = scanner.nextInt();
+            switch (option) {
                 case 1:
                     createFile.createFile();
                     System.out.println("File was created");
@@ -41,16 +40,13 @@ public class Main {
                     System.out.println("Menu:\n1.Create File\n2.Add to File\n3.View File\n4.Solve Task\n5.Exit");
                     break;
                 case 5:
-                    //Create a new file instead of existing file
-                    createFile.createFile();
-                    System.out.println("File has been cleared");
                     break;
                 default:
                     System.out.println("Incorrect input");
                     System.out.println("Menu:\n1.Create File\n2.Add to File\n3.View File\n4.Solve Task\n5.Exit");
                     break;
             }
-        } while (num_of_option != 5);
+        } while (option != 5);
 
 
     }

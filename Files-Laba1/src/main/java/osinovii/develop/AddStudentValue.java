@@ -8,7 +8,16 @@ public class AddStudentValue {
     public void addStudentValue(Student student) {
         System.out.println("Enter Student lastname,group number and 3 marks ");
         student.setLastname(scanner.nextLine());
-        student.setGroupNumber(scanner.nextInt());
+
+        while (true) {
+            double groupNumber = scanner.nextDouble();
+            if (groupNumber > 0) {
+                student.setGroupNumber(scanner.nextInt());
+                break;
+            } else {
+                System.out.println("Invalid value");
+            }
+        }
 
         while (true) {
             double physicsGrade = scanner.nextDouble();
@@ -42,6 +51,6 @@ public class AddStudentValue {
         scanner.nextLine();
 
         System.out.println("Information successfully received");
-        student.setAverageScore();
+        student.calculateAverageScore();
     }
 }

@@ -1,6 +1,10 @@
 package osinovii.develop;
 
 public class Student {
+    
+    /**
+     * Represents a student with personal and academic information.
+     */
     private String lastname;
     private int groupNumber;
     private double physicsGrade;
@@ -8,13 +12,7 @@ public class Student {
     private double informaticsGrade;
     private double averageScore;
 
-    public Student(String lastname, int groupNumber, double physicsGrade, double mathGrade, double informaticsGrade) {
-        this.lastname = lastname;
-        this.groupNumber = groupNumber;
-        this.physicsGrade = physicsGrade;
-        this.mathGrade = mathGrade;
-        this.informaticsGrade = informaticsGrade;
-    }
+
 
     public Student() {
     }
@@ -63,13 +61,40 @@ public class Student {
         return averageScore;
     }
 
-    public void setAverageScore() {
+    /**
+     * Calculates the average score based on grades.
+     */
+    public void calculateAverageScore() {
         this.averageScore = (physicsGrade + mathGrade + informaticsGrade) / 3.0;
     }
 
     @Override
     public String toString() {
-        return String.join( ",",lastname,String.valueOf(groupNumber),String.valueOf(physicsGrade),String.valueOf(mathGrade),String.valueOf(informaticsGrade),String.valueOf(averageScore));
+        return String.join( ",",lastname,
+                String.valueOf(groupNumber),
+                String.valueOf(physicsGrade),
+                String.valueOf(mathGrade),
+                String.valueOf(informaticsGrade),
+                String.valueOf(averageScore));
     }
+
+    /**
+     * Creates a Student from a CSV line.
+     */
+    public static Student fromCsv(String line) {
+        String[] parts = line.split(",");
+        if (parts.length != 6) {
+            throw new IllegalArgumentException("Invalid CSV format: " + line);
+        }
+        Student student = new Student();
+        student.setLastname(parts[0]);
+        student.setGroupNumber(Integer.parseInt(parts[1]));
+        student.setPhysicsGrade(Double.parseDouble(parts[2]));
+        student.setMathGrade(Double.parseDouble(parts[3]));
+        student.setInformaticsGrade(Double.parseDouble(parts[4]));
+        student.calculateAverageScore();
+        return student;
+    }
+
 }
 

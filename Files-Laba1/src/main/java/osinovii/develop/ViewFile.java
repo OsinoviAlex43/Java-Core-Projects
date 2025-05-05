@@ -1,14 +1,13 @@
 package osinovii.develop;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
 public class ViewFile {
 
     public void viewFile() {
-        try (BufferedReader bufferedReader = new BufferedReader(new FileReader("FIle"))) {
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader("File"))) {
             String line;
             while ((line = bufferedReader.readLine()) != null) {
                 String[] param = line.split(",");
