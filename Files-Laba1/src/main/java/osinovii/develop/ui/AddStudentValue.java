@@ -1,4 +1,6 @@
-package osinovii.develop;
+package osinovii.develop.ui;
+
+import osinovii.develop.model.Student;
 
 import java.util.Scanner;
 
@@ -10,9 +12,9 @@ public class AddStudentValue {
         student.setLastname(scanner.nextLine());
 
         while (true) {
-            double groupNumber = scanner.nextDouble();
-            if (groupNumber > 0) {
-                student.setGroupNumber(scanner.nextInt());
+            int groupNumber = scanner.nextInt();
+            if ( groupNumber > 0) {
+                 student.setGroupNumber(groupNumber);
                 break;
             } else {
                 System.out.println("Invalid value");

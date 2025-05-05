@@ -1,4 +1,4 @@
-package osinovii.develop;
+package osinovii.develop.model;
 
 public class Student {
     

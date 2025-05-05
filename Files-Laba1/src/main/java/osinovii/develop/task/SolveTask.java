@@ -1,9 +1,11 @@
-package osinovii.develop;
+package osinovii.develop.task;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
+
+import static osinovii.develop.constants.Constants.STUDENT_FILE;
 
 public class SolveTask {
     Scanner scanner = new Scanner(System.in);
@@ -15,7 +17,7 @@ public class SolveTask {
         double average_score_st = scanner.nextDouble();
         scanner.nextLine();
         int count = 0;
-        try (BufferedReader bufferedReader = new BufferedReader(new FileReader("File"))) {
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(STUDENT_FILE))) {
             String line;
             while ((line = bufferedReader.readLine()) != null) {
                 String[] param = line.split(",");
