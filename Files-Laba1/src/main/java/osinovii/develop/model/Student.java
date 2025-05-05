@@ -1,7 +1,7 @@
 package osinovii.develop.model;
 
 public class Student {
-    
+
     /**
      * Represents a student with personal and academic information.
      */
@@ -11,7 +11,6 @@ public class Student {
     private double mathGrade;
     private double informaticsGrade;
     private double averageScore;
-
 
 
     public Student() {
@@ -70,7 +69,7 @@ public class Student {
 
     @Override
     public String toString() {
-        return String.join( ",",lastname,
+        return String.join(",", lastname,
                 String.valueOf(groupNumber),
                 String.valueOf(physicsGrade),
                 String.valueOf(mathGrade),
