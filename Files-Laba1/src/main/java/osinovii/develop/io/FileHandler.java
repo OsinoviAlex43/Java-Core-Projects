@@ -27,7 +27,7 @@ public class FileHandler {
             bufferedWriter.write(student.toString());
             bufferedWriter.newLine();
         }
-        }
+    }
 
     public List<Student> readStudents() throws IOException {
         List<Student> students = new ArrayList<>();
@@ -53,4 +53,15 @@ public class FileHandler {
         }
         return students;
     }
+
+    public void writeResults(List<Student> students, String outputFile) throws IOException {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile))) {
+            for (Student student : students) {
+                writer.write(student.toString());
+                writer.newLine();
+            }
+        }
+    }
+
+
 }

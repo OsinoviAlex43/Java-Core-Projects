@@ -2,7 +2,7 @@ package osinovii.develop;
 
 import osinovii.develop.io.FileHandler;
 import osinovii.develop.model.Student;
-import osinovii.develop.task.SolveTask;
+import osinovii.develop.task.TaskSolver;
 import osinovii.develop.ui.StudentInputHandler;
 
 import java.io.IOException;
@@ -15,7 +15,7 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         FileHandler fileHandler = new FileHandler();
-        SolveTask solveTask = new SolveTask();
+        TaskSolver taskSolver = new TaskSolver(new Scanner(System.in),fileHandler);
         StudentInputHandler inputHandler = new StudentInputHandler(new Scanner(System.in));
 
         int option = 0;
@@ -40,7 +40,7 @@ public class Main {
                     System.out.println(MENU_TEXT);
                     break;
                 case 4:
-                    solveTask.solveTask();
+                    taskSolver.solveTask();
                     System.out.println(MENU_TEXT);
                     break;
                 case 5:
