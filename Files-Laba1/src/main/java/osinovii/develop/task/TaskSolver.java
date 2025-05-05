@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
+import static osinovii.develop.constants.Constants.RESULT_FILE;
+
 public class TaskSolver {
     private final Scanner scanner;
     private final FileHandler fileHandler;
@@ -32,7 +34,7 @@ public class TaskSolver {
         if (filtered.isEmpty()) {
             System.out.println("No students found with the specified criteria.");
         } else {
-            fileHandler.writeResults(filtered, "task_result.txt");
+            fileHandler.writeResults(filtered, RESULT_FILE);
             System.out.println("Results written to task_result.txt");
             filtered.forEach(System.out::println);
         }
